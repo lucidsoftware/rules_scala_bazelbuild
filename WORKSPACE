@@ -44,7 +44,13 @@ rules_proto_toolchains()
 
 load("@io_bazel_rules_scala//:scala_config.bzl", "scala_config")
 
-scala_config(enable_compiler_dependency_tracking = True)
+scala_config(
+    enable_compiler_dependency_tracking = True,
+    scala_versions = [
+        "2.12.20",
+        "3.6.2",
+    ],
+)
 
 load("//scala:toolchains.bzl", "scala_toolchains")
 
